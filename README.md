@@ -1,1 +1,0 @@
-# minjongbaek.github.io
