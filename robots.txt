@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://minjongbaek.github.io/sitemap.xml
-Host: https://minjongbaek.github.io
