@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/minjong/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/python/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/linux/</loc>
+    <lastmod>2020-12-14T01:27:45+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-12-14T01:27:45+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+</urlset>

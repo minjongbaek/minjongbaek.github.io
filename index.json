@@ -1,0 +1,43 @@
+[
+{
+	"uri": "/minjong/",
+	"title": "백민종",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 0 백민종  파이썬을 주력으로 하는 1년차 백엔드 개발자입니다.\n Python Java JavaScript Linux  "
+},
+{
+	"uri": "/python/",
+	"title": "Pythone",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 1 Python "
+},
+{
+	"uri": "/linux/",
+	"title": "Linux",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 2 Linux  "
+},
+{
+	"uri": "/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "민종로그   백민종     Pythone     Linux     "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
