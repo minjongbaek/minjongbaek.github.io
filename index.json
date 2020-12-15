@@ -18,14 +18,28 @@
 	"title": "Linux",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 Linux  "
+	"content": "Chapter 2 Linux  WSL    WSL에서 GUI 프로그램 실행 환경 구성하기      "
+},
+{
+	"uri": "/linux/wsl/",
+	"title": "WSL",
+	"tags": [],
+	"description": "",
+	"content": "WSL Windows Subsystem for Linux  WSL에서 GUI 프로그램 실행 환경 구성하기     "
 },
 {
 	"uri": "/",
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Pythone     Linux     "
+	"content": "민종로그   백민종     Pythone     Linux    WSL    WSL에서 GUI 프로그램 실행 환경 구성하기     "
+},
+{
+	"uri": "/linux/wsl/use-xserver/",
+	"title": "WSL에서 GUI 프로그램 실행 환경 구성하기",
+	"tags": [],
+	"description": "",
+	"content": "최근까지 회사 컴퓨터 OS로 Ubuntu를 잘사용하다가 윈도우로 갈아탔다. wine을 이용해 카카오톡도 설치하고 잘사용하던 OS를 변경한 이유는 여러가지가 있었지만 (일부 사이트 이용 제한, 사내 문서 공유 등..) 가장 큰 이유는 WSL 때문이었다.\n"
 },
 {
 	"uri": "/categories/",

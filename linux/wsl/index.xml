@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>민종로그</title>
-    <link>/</link>
-    <description>Recent content on 민종로그</description>
+    <title>WSL on 민종로그</title>
+    <link>/linux/wsl/</link>
+    <description>Recent content in WSL on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Wed, 16 Dec 2020 00:00:26 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate><atom:link href="/linux/wsl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WSL에서 GUI 프로그램 실행 환경 구성하기</title>
       <link>/linux/wsl/use-xserver/</link>
