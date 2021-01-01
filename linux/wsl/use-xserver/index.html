@@ -12,21 +12,21 @@
     <title>WSL에서 GUI 프로그램 실행 환경 구성하기 :: 민종로그</title>
 
     
-    <link href="/css/nucleus.css?1608045848" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1608045848" rel="stylesheet">
-    <link href="/css/hybrid.css?1608045848" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1608045848" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1608045848" rel="stylesheet">
-    <link href="/css/auto-complete.css?1608045848" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1608045848" rel="stylesheet">
-    <link href="/css/theme.css?1608045848" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1608045848" rel="stylesheet">
+    <link href="/css/nucleus.css?1609502243" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1609502243" rel="stylesheet">
+    <link href="/css/hybrid.css?1609502243" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1609502243" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1609502243" rel="stylesheet">
+    <link href="/css/auto-complete.css?1609502243" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1609502243" rel="stylesheet">
+    <link href="/css/theme.css?1609502243" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1609502243" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1608045848" rel="stylesheet">
+    <link href="/css/theme-mine.css?1609502243" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1608045848"></script>
+    <script src="/js/jquery-3.3.1.min.js?1609502243"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -64,14 +64,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1608045848"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1608045848"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1609502243"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1609502243"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1608045848"></script>
+<script type="text/javascript" src="/js/search.js?1609502243"></script>
 
     
   </div>
@@ -314,6 +314,27 @@
 
 
 <p>최근까지 회사 컴퓨터 OS로 Ubuntu를 잘사용하다가 윈도우로 갈아탔다. wine을 이용해 카카오톡도 설치하고 잘사용하던 OS를 변경한 이유는 여러가지가 있었지만 (일부 사이트 이용 제한, 사내 문서 공유 등..) 가장 큰 이유는 WSL 때문이었다.</p>
+<p>WSL(Windows Subsystem for Linux) 이란 이름 그대로 Linux용 Windows 하위 시스템으로 사용자가 기존 가상 머신의 오버헤드 또는 듀얼 부팅 설정 없이 대부분의 GNU/Linux 환경을 수정하지 않고 Windows에서 직접 실행할 수 있게 해준다.
+공식문서를 통해 쉽게 설치할 수 있다.</p>
+<p><a href="https://docs.microsoft.com/ko-kr/windows/wsl/install-win10">WSL 설치 및 WSL 2로 업데이트</a></p>
+<p><strong>그런데 문제가 발생했다.</strong></p>
+<p>나는 IDE로 pycharm을 사용 중인데, WSL은 기본적으로 CLI 환경이기 때문에 화면읠 띄워주기 위해 X Server가 필요했다. 혹시나 하는 마음에 윈도우용 pycharm을 설치하고 WSL 내부의 파일에 접근해보았는데 인덱싱 속도가 너무 느려서 사용하지 못할 정도였다.</p>
+<hr>
+<p>서론은 여기까지하고 본론으로 넘어가보자.</p>
+<p>우선, 윈도우 내에서 구동될 X Server가 필요한데 나는 VcXsrv를 선택했다. 윈도우 패키지 관리자인 chocolatey 이용해 VcXsrv를 설치한다. (진짜 윈도우 사용하면서 apt 명령어가 새삼 편했다는 것을 깨달았다.) chocolatey은 다음 문서를 참고하여 쉽게 설치 가능하다.</p>
+<p><a href="https://chocolatey.org/install">chocolatey 설치하기</a></p>
+<p>powershell에서 아래 명령어를 입력한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">choco install vcxsrv -y
+</code></pre></div><p>설치가 완료 됐다면, 프로그램을 실행시키고 다음과 같이 설정한다.</p>
+<p><img src="/image/use-xserver/vcxsrv_step1.png" alt="VcXsrv 설치 과정1"></p>
+<p><img src="/image/use-xserver/vcxsrv_step2.png" alt="VcXsrv 설치 과정1"></p>
+<p><img src="/image/use-xserver/vcxsrv_step3.png" alt="VcXsrv 설치 과정1"></p>
+<p><img src="/image/use-xserver/vcxsrv_step4.png" alt="VcXsrv 설치 과정1"></p>
+<p>그리고 리눅스에서 X Server의 디스플레이를 찾을 수 있도록 WSL의 사용자 홈 디렉토리에 있는 .bashrc 파일 아래에 다음과 같은 코드를 추가한다.</p>
+<pre><code>export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+</code></pre><p>이어서 설치한 파일을 실행하면&hellip;</p>
+<p><img src="/image/use-xserver/WSL_GUI.png" alt="GUI 프로그램 실행 사진"></p>
+<p>리눅스 프로그램을 화면으로 볼 수 있게 됐다!</p>
 
 
 <footer class="footline">
@@ -449,19 +470,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1608045848"></script>
-    <script src="/js/perfect-scrollbar.min.js?1608045848"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1608045848"></script>
-    <script src="/js/jquery.sticky.js?1608045848"></script>
-    <script src="/js/featherlight.min.js?1608045848"></script>
-    <script src="/js/highlight.pack.js?1608045848"></script>
+    <script src="/js/clipboard.min.js?1609502243"></script>
+    <script src="/js/perfect-scrollbar.min.js?1609502243"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1609502243"></script>
+    <script src="/js/jquery.sticky.js?1609502243"></script>
+    <script src="/js/featherlight.min.js?1609502243"></script>
+    <script src="/js/highlight.pack.js?1609502243"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1608045848"></script>
-    <script src="/js/learn.js?1608045848"></script>
-    <script src="/js/hugo-learn.js?1608045848"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1609502243"></script>
+    <script src="/js/learn.js?1609502243"></script>
+    <script src="/js/hugo-learn.js?1609502243"></script>
     
         
-            <script src="/mermaid/mermaid.js?1608045848"></script>
+            <script src="/mermaid/mermaid.js?1609502243"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

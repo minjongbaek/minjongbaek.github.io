@@ -13,7 +13,9 @@
       <pubDate>Wed, 16 Dec 2020 00:00:26 +0900</pubDate>
       
       <guid>/linux/wsl/use-xserver/</guid>
-      <description>최근까지 회사 컴퓨터 OS로 Ubuntu를 잘사용하다가 윈도우로 갈아탔다. wine을 이용해 카카오톡도 설치하고 잘사용하던 OS를 변경한 이유는 여러가지가 있었지만 (일부 사이트 이용 제한, 사내 문서 공유 등..) 가장 큰 이유는 WSL 때문이었다.</description>
+      <description>최근까지 회사 컴퓨터 OS로 Ubuntu를 잘사용하다가 윈도우로 갈아탔다. wine을 이용해 카카오톡도 설치하고 잘사용하던 OS를 변경한 이유는 여러가지가 있었지만 (일부 사이트 이용 제한, 사내 문서 공유 등..) 가장 큰 이유는 WSL 때문이었다.
+WSL(Windows Subsystem for Linux) 이란 이름 그대로 Linux용 Windows 하위 시스템으로 사용자가 기존 가상 머신의 오버헤드 또는 듀얼 부팅 설정 없이 대부분의 GNU/Linux 환경을 수정하지 않고 Windows에서 직접 실행할 수 있게 해준다. 공식문서를 통해 쉽게 설치할 수 있다.
+WSL 설치 및 WSL 2로 업데이트</description>
     </item>
     
   </channel>
