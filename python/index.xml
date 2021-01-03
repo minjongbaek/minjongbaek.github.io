@@ -5,6 +5,10 @@
     <link>/python/</link>
     <description>Recent content in Pythone on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us,ko-kr</language><atom:link href="/python/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us,ko-kr</language>
+    
+	<atom:link href="/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

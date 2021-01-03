@@ -6,7 +6,24 @@
     <description>Recent content on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Wed, 16 Dec 2020 00:00:26 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Jan 2021 22:14:59 +0900</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>외부에서 WSL에 접근할 수 있도록  설정하기</title>
+      <link>/linux/wsl/ssh_port_forwarding/</link>
+      <pubDate>Sun, 03 Jan 2021 22:14:59 +0900</pubDate>
+      
+      <guid>/linux/wsl/ssh_port_forwarding/</guid>
+      <description>WSL을 설치하고 외부에서 접속하기 위해 포워딩 설정을 하고 테스트까지 마쳤다. 그리고 퇴근 후 다시 접속을 시도했는데 잘 되지 않았다. 다음 날 확인해보니 WSL2의 ip주소가 변경되어 있었다.
+WSL2은 Hyper-V처럼 가상 이더넷을 생성하여 별도의 네트워크로 구성된다.
+위와 같은 특징 때문에 부팅할 때 마다 WSL의 ip주소가 계속 바뀐다는 것을 알게 된 후, 이를 해결할 방법을 찾다가 적절한 해결책을 찾아 공유하게 되었다.
+아래 코드를 파워쉘 스크립트로 작성 후, 적절한 이름으로 저장한다.
+$remoteport = bash.exe -c &amp;#34;ifconfig eth0 | grep &amp;#39;inet &amp;#39;&amp;#34; $found = $remoteport -match &amp;#39;\d{1,3}\.</description>
+    </item>
+    
     <item>
       <title>WSL에서 GUI 프로그램 실행 환경 구성하기</title>
       <link>/linux/wsl/use-xserver/</link>

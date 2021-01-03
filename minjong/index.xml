@@ -5,6 +5,10 @@
     <link>/minjong/</link>
     <description>Recent content in 백민종 on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us,ko-kr</language><atom:link href="/minjong/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us,ko-kr</language>
+    
+	<atom:link href="/minjong/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

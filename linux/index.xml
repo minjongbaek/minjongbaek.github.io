@@ -6,6 +6,10 @@
     <description>Recent content in Linux on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate><atom:link href="/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate>
+    
+	<atom:link href="/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>
