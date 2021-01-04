@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>외부에서 WSL에 접근할 수 있도록  설정하기 :: 민종로그</title>
+    <title>외부에서 WSL에 접근할 수 있도록 설정하기 :: 민종로그</title>
 
     
-    <link href="/css/nucleus.css?1609686365" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1609686365" rel="stylesheet">
-    <link href="/css/hybrid.css?1609686365" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1609686365" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1609686365" rel="stylesheet">
-    <link href="/css/auto-complete.css?1609686365" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1609686365" rel="stylesheet">
-    <link href="/css/theme.css?1609686365" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1609686365" rel="stylesheet">
+    <link href="/css/nucleus.css?1609773588" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1609773588" rel="stylesheet">
+    <link href="/css/hybrid.css?1609773588" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1609773588" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1609773588" rel="stylesheet">
+    <link href="/css/auto-complete.css?1609773588" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1609773588" rel="stylesheet">
+    <link href="/css/theme.css?1609773588" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1609773588" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1609686365" rel="stylesheet">
+    <link href="/css/theme-mine.css?1609773588" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1609686365"></script>
+    <script src="/js/jquery-3.3.1.min.js?1609773588"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -64,14 +64,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1609686365"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1609686365"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1609773588"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1609773588"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1609686365"></script>
+<script type="text/javascript" src="/js/search.js?1609773588"></script>
 
     
   </div>
@@ -194,9 +194,9 @@
  
   
     
-      <li data-nav-id="/linux/wsl/ssh_port_forwarding/" title="외부에서 WSL에 접근할 수 있도록  설정하기" class="dd-item active">
+      <li data-nav-id="/linux/wsl/ssh_port_forwarding/" title="외부에서 WSL에 접근할 수 있도록 설정하기" class="dd-item active">
         <a href="/linux/wsl/ssh_port_forwarding/">
-        외부에서 WSL에 접근할 수 있도록  설정하기
+        외부에서 WSL에 접근할 수 있도록 설정하기
         
         </a>
     </li>
@@ -296,7 +296,7 @@
             
           
           
-            <a href='/'></a> > <a href='/linux/'>Linux</a> > <a href='/linux/wsl/'>WSL</a> > 외부에서 WSL에 접근할 수 있도록  설정하기
+            <a href='/'></a> > <a href='/linux/'>Linux</a> > <a href='/linux/wsl/'>WSL</a> > 외부에서 WSL에 접근할 수 있도록 설정하기
           
         
           
@@ -327,7 +327,7 @@
           
             <h1>
               
-              외부에서 WSL에 접근할 수 있도록  설정하기
+              외부에서 WSL에 접근할 수 있도록 설정하기
             </h1>
           
 
@@ -338,7 +338,9 @@
 <p>WSL2은 <a href="https://docs.microsoft.com/ko-kr/virtualization/hyper-v-on-windows/about/">Hyper-V</a>처럼 가상 이더넷을 생성하여 별도의 네트워크로 구성된다.</p>
 <p>위와 같은 특징 때문에 부팅할 때 마다 WSL의 ip주소가 계속 바뀐다는 것을 알게 된 후, 이를 해결할 방법을 찾다가 적절한 <a href="https://github.com/microsoft/WSL/issues/4150">해결책</a>을 찾아 공유하게 되었다.</p>
 <p>아래 코드를 파워쉘 스크립트로 작성 후, 적절한 이름으로 저장한다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$remoteport = bash.exe -c <span style="color:#e6db74">&#34;ifconfig eth0 | grep &#39;inet &#39;&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Windows\System32\bash.exe -c <span style="color:#e6db74">&#34;sudo service ssh start&#34;</span>
+
+$remoteport = bash.exe -c <span style="color:#e6db74">&#34;ifconfig eth0 | grep &#39;inet &#39;&#34;</span>
 $found = $remoteport <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#39;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}&#39;</span>;
 
 <span style="color:#66d9ef">if</span>( $found ){
@@ -373,7 +375,9 @@ iex <span style="color:#e6db74">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2
   iex <span style="color:#e6db74">&#34;netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$remoteport&#34;</span>;
 }
 </code></pre></div><p>위 코드를 보면 WSL의 ip를 탐색 후 기존 방화벽 룰이 있다면 제거 후 ports에 입력되는 번호로 포트를 열어주게 된다. 사용하고자 하는 번호를 입력해준다.</p>
-<p>포트 번호를 변경했으면, 위 코드를 부팅할 때 마다 자동으로 실행되도록 윈도우 작업 스케줄러에 등록한다.</p>
+<p>그리고 다른 사람들도 그런지는 모르겠으나, 필자의 경우 ssh service가 자동으로 실행되지 않아 powershell 스크립트 상단에 아래 코드를 추가하여 ssh 데몬이 자동으로 실행되도록 해주었다. (WSL 에서는 systemctl 명령어가 작동하지 않는다..!)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Windows\System32\bash.exe -c <span style="color:#e6db74">&#34;sudo service ssh start&#34;</span>
+</code></pre></div><p>이제 작성한 스크립트 코드를 작업 스케줄러에 등록한다. 그냥 등록하면 안될 수도 있으니 <strong>가장 높은 수준의 권한으로 실행</strong> 항목 체크하는 것을 잊지 않도록 하자.</p>
 
 
 <footer class="footline">
@@ -528,19 +532,19 @@ iex <span style="color:#e6db74">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1609686365"></script>
-    <script src="/js/perfect-scrollbar.min.js?1609686365"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1609686365"></script>
-    <script src="/js/jquery.sticky.js?1609686365"></script>
-    <script src="/js/featherlight.min.js?1609686365"></script>
-    <script src="/js/highlight.pack.js?1609686365"></script>
+    <script src="/js/clipboard.min.js?1609773588"></script>
+    <script src="/js/perfect-scrollbar.min.js?1609773588"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1609773588"></script>
+    <script src="/js/jquery.sticky.js?1609773588"></script>
+    <script src="/js/featherlight.min.js?1609773588"></script>
+    <script src="/js/highlight.pack.js?1609773588"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1609686365"></script>
-    <script src="/js/learn.js?1609686365"></script>
-    <script src="/js/hugo-learn.js?1609686365"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1609773588"></script>
+    <script src="/js/learn.js?1609773588"></script>
+    <script src="/js/hugo-learn.js?1609773588"></script>
     
         
-            <script src="/mermaid/mermaid.js?1609686365"></script>
+            <script src="/mermaid/mermaid.js?1609773588"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
