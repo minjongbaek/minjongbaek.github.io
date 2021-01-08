@@ -12,21 +12,21 @@
     <title>외부에서 WSL에 접근할 수 있도록 설정하기 :: 민종로그</title>
 
     
-    <link href="/css/nucleus.css?1609773588" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1609773588" rel="stylesheet">
-    <link href="/css/hybrid.css?1609773588" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1609773588" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1609773588" rel="stylesheet">
-    <link href="/css/auto-complete.css?1609773588" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1609773588" rel="stylesheet">
-    <link href="/css/theme.css?1609773588" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1609773588" rel="stylesheet">
+    <link href="/css/nucleus.css?1610074507" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1610074507" rel="stylesheet">
+    <link href="/css/hybrid.css?1610074507" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1610074507" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1610074507" rel="stylesheet">
+    <link href="/css/auto-complete.css?1610074507" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1610074507" rel="stylesheet">
+    <link href="/css/theme.css?1610074507" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1610074507" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1609773588" rel="stylesheet">
+    <link href="/css/theme-mine.css?1610074507" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1609773588"></script>
+    <script src="/js/jquery-3.3.1.min.js?1610074507"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -64,14 +64,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1609773588"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1609773588"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1610074507"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1610074507"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1609773588"></script>
+<script type="text/javascript" src="/js/search.js?1610074507"></script>
 
     
   </div>
@@ -184,6 +184,27 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/linux/wsl/use-korean/" title="WSL GUI 애플리케이션에서 한글 입력하기" class="dd-item ">
+        <a href="/linux/wsl/use-korean/">
+        WSL GUI 애플리케이션에서 한글 입력하기
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -377,7 +398,8 @@ iex <span style="color:#e6db74">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2
 </code></pre></div><p>위 코드를 보면 WSL의 ip를 탐색 후 기존 방화벽 룰이 있다면 제거 후 ports에 입력되는 번호로 포트를 열어주게 된다. 사용하고자 하는 번호를 입력해준다.</p>
 <p>그리고 다른 사람들도 그런지는 모르겠으나, 필자의 경우 ssh service가 자동으로 실행되지 않아 powershell 스크립트 상단에 아래 코드를 추가하여 ssh 데몬이 자동으로 실행되도록 해주었다. (WSL 에서는 systemctl 명령어가 작동하지 않는다..!)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Windows\System32\bash.exe -c <span style="color:#e6db74">&#34;sudo service ssh start&#34;</span>
-</code></pre></div><p>이제 작성한 스크립트 코드를 작업 스케줄러에 등록한다. 그냥 등록하면 안될 수도 있으니 <strong>가장 높은 수준의 권한으로 실행</strong> 항목 체크하는 것을 잊지 않도록 하자.</p>
+</code></pre></div><p>이제 작성한 스크립트 코드를 작업 스케줄러에 등록한다. 나의 경우는 트리거를 <code>시스템 시작 시</code> 로 두었지만 필요한 대로 등록한다. 그냥 등록하면 안될 수도 있으니 <strong>가장 높은 수준의 권한으로 실행</strong> 항목 체크하는 것을 잊지 않도록 하자.</p>
+<p>만약 스케줄러가 제대로 작동하지 않는다면, 해당 스케줄러의 <code>기록</code> 메뉴에서 자세한 로그를 확인할 수 있으니 확인해보자.</p>
 
 
 <footer class="footline">
@@ -480,6 +502,25 @@ iex <span style="color:#e6db74">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -532,19 +573,19 @@ iex <span style="color:#e6db74">&#34;New-NetFireWallRule -DisplayName &#39;WSL 2
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1609773588"></script>
-    <script src="/js/perfect-scrollbar.min.js?1609773588"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1609773588"></script>
-    <script src="/js/jquery.sticky.js?1609773588"></script>
-    <script src="/js/featherlight.min.js?1609773588"></script>
-    <script src="/js/highlight.pack.js?1609773588"></script>
+    <script src="/js/clipboard.min.js?1610074507"></script>
+    <script src="/js/perfect-scrollbar.min.js?1610074507"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1610074507"></script>
+    <script src="/js/jquery.sticky.js?1610074507"></script>
+    <script src="/js/featherlight.min.js?1610074507"></script>
+    <script src="/js/highlight.pack.js?1610074507"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1609773588"></script>
-    <script src="/js/learn.js?1609773588"></script>
-    <script src="/js/hugo-learn.js?1609773588"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1610074507"></script>
+    <script src="/js/learn.js?1610074507"></script>
+    <script src="/js/hugo-learn.js?1610074507"></script>
     
         
-            <script src="/mermaid/mermaid.js?1609773588"></script>
+            <script src="/mermaid/mermaid.js?1610074507"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -18,28 +18,35 @@
 	"title": "Linux",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 Linux  WSL    외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
+	"content": "Chapter 2 Linux  WSL    WSL GUI 애플리케이션에서 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
 },
 {
 	"uri": "/linux/wsl/",
 	"title": "WSL",
 	"tags": [],
 	"description": "",
-	"content": "WSL Windows Subsystem for Linux  외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기     "
+	"content": "WSL Windows Subsystem for Linux  WSL GUI 애플리케이션에서 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기     "
 },
 {
 	"uri": "/",
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Pythone     Linux    WSL    외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     "
+	"content": "민종로그   백민종     Pythone     Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     "
+},
+{
+	"uri": "/linux/wsl/use-korean/",
+	"title": "WSL GUI 애플리케이션에서 한글 입력하기",
+	"tags": [],
+	"description": "",
+	"content": "WSL을 설치 후 X DISPLAY 서버 설정까지 모두 마쳤다. 그런데 문제가 있었다. 한글 입력이 제대로 안된다는 것이다..!\n한글을 제대로 입력하기 위해서 입력기를 설치해야한다. 리눅스에는 fcitx, uim 등의 입력기가 있지만, 전에 사용하던 우분투 데스크탑에서 fcitx를 사용했기 때문에 fcitx 기준으로 포스팅한다.\n원하는 한글 폰트를 먼저 설치한 후에, 패키지 관리자를 이용하여 fcitx를 설치한다.\nsudo apt install fcitx fcitx-hangle dbus-x11 설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 fcitx를 기본 입력기로 설정한다.\n기본 입력기로 설정 후, /etc/profile.d/fcitx.sh 파일을 생성하고 아래 내용을 입력한다.\n#!/bin/bashexport QT_IM_MODULE=fcitxexport GTK_IM_MODULE=fcitxexport XMODIFIERS=@im=fcitxexport DefaultIMModule=fcitx #optionalfcitx-autostart \u0026amp;\u0026gt;/dev/null내용 저장 후에 fcitx-config-gtk3를 실행하여 아래 사진처럼 한글 입력기가 정상적으로 추가되었는지 확인한다. 없다면 + 버튼을 눌러 추가하자.\n!! 만약 어떤 입력기도 정상적으로 보이지 않는다면 x server에서 입력기를 제대로 인식하지 못하는 문제로 fcitx \u0026amp; 라고 입력 후 다시 시도해본다.\n한글 입력기가 정상적으로 보인다면 Global Config 메뉴에서 아래 사진처럼 원하는 키와 매핑해서 사용하면 된다. "
 },
 {
 	"uri": "/linux/wsl/ssh_port_forwarding/",
 	"title": "외부에서 WSL에 접근할 수 있도록 설정하기",
 	"tags": [],
 	"description": "",
-	"content": "WSL을 설치하고 외부에서 접속하기 위해 포워딩 설정을 하고 테스트까지 마쳤다. 그리고 퇴근 후 다시 접속을 시도했는데 잘 되지 않았다. 다음 날 확인해보니 WSL2의 ip주소가 변경되어 있었다.\nWSL2은 Hyper-V처럼 가상 이더넷을 생성하여 별도의 네트워크로 구성된다.\n위와 같은 특징 때문에 부팅할 때 마다 WSL의 ip주소가 계속 바뀐다는 것을 알게 된 후, 이를 해결할 방법을 찾다가 적절한 해결책을 찾아 공유하게 되었다.\n아래 코드를 파워쉘 스크립트로 작성 후, 적절한 이름으로 저장한다.\nC:\\Windows\\System32\\bash.exe -c \u0026#34;sudo service ssh start\u0026#34; $remoteport = bash.exe -c \u0026#34;ifconfig eth0 | grep \u0026#39;inet \u0026#39;\u0026#34; $found = $remoteport -match \u0026#39;\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\u0026#39;; if( $found ){ $remoteport = $matches[0]; } else{ echo \u0026#34;The Script Exited, the ip address of WSL 2 cannot be found\u0026#34;; exit; } #[Ports] #All the ports you want to forward separated by coma $ports=@(80,443,10000,3000,5000); #[Static ip] #You can change the addr to your ip config to listen to a specific address $addr=\u0026#39;0.0.0.0\u0026#39;; $ports_a = $ports -join \u0026#34;,\u0026#34;; #Remove Firewall Exception Rules iex \u0026#34;Remove-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; \u0026#34;; #adding Exception Rules for inbound and outbound Rules iex \u0026#34;New-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; -Direction Outbound -LocalPort $ports_a -Action Allow -Protocol TCP\u0026#34;; iex \u0026#34;New-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; -Direction Inbound -LocalPort $ports_a -Action Allow -Protocol TCP\u0026#34;; for( $i = 0; $i -lt $ports.length; $i++ ){ $port = $ports[$i]; iex \u0026#34;netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$addr\u0026#34;; iex \u0026#34;netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$remoteport\u0026#34;; } 위 코드를 보면 WSL의 ip를 탐색 후 기존 방화벽 룰이 있다면 제거 후 ports에 입력되는 번호로 포트를 열어주게 된다. 사용하고자 하는 번호를 입력해준다.\n그리고 다른 사람들도 그런지는 모르겠으나, 필자의 경우 ssh service가 자동으로 실행되지 않아 powershell 스크립트 상단에 아래 코드를 추가하여 ssh 데몬이 자동으로 실행되도록 해주었다. (WSL 에서는 systemctl 명령어가 작동하지 않는다..!)\nC:\\Windows\\System32\\bash.exe -c \u0026#34;sudo service ssh start\u0026#34; 이제 작성한 스크립트 코드를 작업 스케줄러에 등록한다. 그냥 등록하면 안될 수도 있으니 가장 높은 수준의 권한으로 실행 항목 체크하는 것을 잊지 않도록 하자.\n"
+	"content": "WSL을 설치하고 외부에서 접속하기 위해 포워딩 설정을 하고 테스트까지 마쳤다. 그리고 퇴근 후 다시 접속을 시도했는데 잘 되지 않았다. 다음 날 확인해보니 WSL2의 ip주소가 변경되어 있었다.\nWSL2은 Hyper-V처럼 가상 이더넷을 생성하여 별도의 네트워크로 구성된다.\n위와 같은 특징 때문에 부팅할 때 마다 WSL의 ip주소가 계속 바뀐다는 것을 알게 된 후, 이를 해결할 방법을 찾다가 적절한 해결책을 찾아 공유하게 되었다.\n아래 코드를 파워쉘 스크립트로 작성 후, 적절한 이름으로 저장한다.\nC:\\Windows\\System32\\bash.exe -c \u0026#34;sudo service ssh start\u0026#34; $remoteport = bash.exe -c \u0026#34;ifconfig eth0 | grep \u0026#39;inet \u0026#39;\u0026#34; $found = $remoteport -match \u0026#39;\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\u0026#39;; if( $found ){ $remoteport = $matches[0]; } else{ echo \u0026#34;The Script Exited, the ip address of WSL 2 cannot be found\u0026#34;; exit; } #[Ports] #All the ports you want to forward separated by coma $ports=@(80,443,10000,3000,5000); #[Static ip] #You can change the addr to your ip config to listen to a specific address $addr=\u0026#39;0.0.0.0\u0026#39;; $ports_a = $ports -join \u0026#34;,\u0026#34;; #Remove Firewall Exception Rules iex \u0026#34;Remove-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; \u0026#34;; #adding Exception Rules for inbound and outbound Rules iex \u0026#34;New-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; -Direction Outbound -LocalPort $ports_a -Action Allow -Protocol TCP\u0026#34;; iex \u0026#34;New-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; -Direction Inbound -LocalPort $ports_a -Action Allow -Protocol TCP\u0026#34;; for( $i = 0; $i -lt $ports.length; $i++ ){ $port = $ports[$i]; iex \u0026#34;netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$addr\u0026#34;; iex \u0026#34;netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$remoteport\u0026#34;; } 위 코드를 보면 WSL의 ip를 탐색 후 기존 방화벽 룰이 있다면 제거 후 ports에 입력되는 번호로 포트를 열어주게 된다. 사용하고자 하는 번호를 입력해준다.\n그리고 다른 사람들도 그런지는 모르겠으나, 필자의 경우 ssh service가 자동으로 실행되지 않아 powershell 스크립트 상단에 아래 코드를 추가하여 ssh 데몬이 자동으로 실행되도록 해주었다. (WSL 에서는 systemctl 명령어가 작동하지 않는다..!)\nC:\\Windows\\System32\\bash.exe -c \u0026#34;sudo service ssh start\u0026#34; 이제 작성한 스크립트 코드를 작업 스케줄러에 등록한다. 나의 경우는 트리거를 시스템 시작 시 로 두었지만 필요한 대로 등록한다. 그냥 등록하면 안될 수도 있으니 가장 높은 수준의 권한으로 실행 항목 체크하는 것을 잊지 않도록 하자.\n만약 스케줄러가 제대로 작동하지 않는다면, 해당 스케줄러의 기록 메뉴에서 자세한 로그를 확인할 수 있으니 확인해보자.\n"
 },
 {
 	"uri": "/linux/wsl/use-xserver/",

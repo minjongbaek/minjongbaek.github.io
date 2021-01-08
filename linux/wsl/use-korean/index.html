@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tags :: 민종로그</title>
+    <title>WSL GUI 애플리케이션에서 한글 입력하기 :: 민종로그</title>
 
     
     <link href="/css/nucleus.css?1610074507" rel="stylesheet">
@@ -45,7 +45,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/linux/wsl/use-korean/">
     <nav id="sidebar" class="">
 
 
@@ -139,7 +139,7 @@
   
     
     <li data-nav-id="/linux/" title="Linux" class="dd-item
-        
+        parent
         
         
         ">
@@ -168,7 +168,7 @@
   
     
     <li data-nav-id="/linux/wsl/" title="WSL" class="dd-item
-        
+        parent
         
         
         ">
@@ -194,7 +194,7 @@
  
   
     
-      <li data-nav-id="/linux/wsl/use-korean/" title="WSL GUI 애플리케이션에서 한글 입력하기" class="dd-item ">
+      <li data-nav-id="/linux/wsl/use-korean/" title="WSL GUI 애플리케이션에서 한글 입력하기" class="dd-item active">
         <a href="/linux/wsl/use-korean/">
         WSL GUI 애플리케이션에서 한글 입력하기
         
@@ -309,7 +309,19 @@
             
           
           
-            <a href='/'></a> > Tags
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/linux/'>Linux</a> > <a href='/linux/wsl/'>WSL</a> > WSL GUI 애플리케이션에서 한글 입력하기
+          
+        
+          
+        
           
         
           
@@ -320,7 +332,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -336,18 +348,35 @@
           
             <h1>
               
-              Tags
+              WSL GUI 애플리케이션에서 한글 입력하기
             </h1>
           
 
         
 
 
+<p><a href="/linux/wsl/use-xserver/">WSL을 설치 후 X DISPLAY 서버 설정까지 모두 마쳤다.</a> 그런데 문제가 있었다. <strong>한글 입력이 제대로 안된다는 것이다..!</strong></p>
+<p>한글을 제대로 입력하기 위해서 입력기를 설치해야한다. 리눅스에는 fcitx, uim 등의 입력기가 있지만, 전에 사용하던 우분투 데스크탑에서 fcitx를 사용했기 때문에 fcitx 기준으로 포스팅한다.</p>
+<p><strong>원하는 한글 폰트를 먼저 설치한 후에</strong>, 패키지 관리자를 이용하여 fcitx를 설치한다.</p>
+<pre><code>sudo apt install fcitx fcitx-hangle dbus-x11
+</code></pre><p>설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 <code>fcitx</code>를 기본 입력기로 설정한다.</p>
+<p>기본 입력기로 설정 후, /etc/profile.d/fcitx.sh 파일을 생성하고 아래 내용을 입력한다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">#!<span style="color:#e6db74">/bin/</span><span style="color:#a6e22e">bash</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">export</span> <span style="color:#a6e22e">QT_IM_MODULE</span>=<span style="color:#a6e22e">fcitx</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">export</span> <span style="color:#a6e22e">GTK_IM_MODULE</span>=<span style="color:#a6e22e">fcitx</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">export</span> <span style="color:#a6e22e">XMODIFIERS</span>=@<span style="color:#a6e22e">im</span>=<span style="color:#a6e22e">fcitx</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">export</span> <span style="color:#a6e22e">DefaultIMModule</span>=<span style="color:#a6e22e">fcitx</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span> <span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>#<span style="color:#a6e22e">optional</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">fcitx</span>-<span style="color:#a6e22e">autostart</span> &amp;&gt;<span style="color:#e6db74">/dev/</span><span style="color:#a6e22e">null</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>내용 저장 후에 fcitx-config-gtk3를 실행하여 아래 사진처럼 한글 입력기가 정상적으로 추가되었는지 확인한다. 없다면 + 버튼을 눌러 추가하자.</p>
+<p><img src="/image/use-korean/fcitx_config_screen.png" alt="한글 입력기 설정 화면"></p>
+<p>!! 만약 어떤 입력기도 정상적으로 보이지 않는다면 x server에서 입력기를 제대로 인식하지 못하는 문제로 <code>fcitx &amp;</code> 라고 입력 후 다시 시도해본다.</p>
+<p>한글 입력기가 정상적으로 보인다면 <code>Global Config</code> 메뉴에서 아래 사진처럼 원하는 키와 매핑해서 사용하면 된다.
+<img src="/image/use-korean/fcitx_config_screen2.png" alt="한글 입력기 설정 화면2"></p>
 
 
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -417,6 +446,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -432,6 +462,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -444,6 +475,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -460,6 +492,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -531,3 +566,4 @@
 
   </body>
 </html>
+
