@@ -8,7 +8,7 @@
 },
 {
 	"uri": "/python/",
-	"title": "Pythone",
+	"title": "Python",
 	"tags": [],
 	"description": "",
 	"content": "Python "
@@ -22,7 +22,7 @@
 },
 {
 	"uri": "/java/",
-	"title": "JAVA",
+	"title": "Java",
 	"tags": [],
 	"description": "",
 	"content": "JAVA  gradle 버전을 지정하여 프로젝트 빌드하기     "
@@ -39,7 +39,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Pythone     Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     JAVA    gradle 버전을 지정하여 프로젝트 빌드하기      "
+	"content": "민종로그   백민종     Python     Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     Java    gradle 버전을 지정하여 프로젝트 빌드하기      "
 },
 {
 	"uri": "/java/use-gradle-other-version/",
