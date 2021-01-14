@@ -4,28 +4,28 @@
 	"title": "백민종",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 0 백민종  파이썬을 주력으로 하는 1년차 백엔드 개발자입니다.\n Python Java JavaScript Linux  "
+	"content": "백민종  파이썬을 주력으로 하는 1년차 백엔드 개발자입니다.\n Python Java JavaScript Linux  "
 },
 {
 	"uri": "/python/",
 	"title": "Pythone",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 1 Python "
-},
-{
-	"uri": "/java/",
-	"title": "JAVA",
-	"tags": [],
-	"description": "",
-	"content": "WSL Windows Subsystem for Linux  gradle 버전을 지정하여 프로젝트 빌드하기     "
+	"content": "Python "
 },
 {
 	"uri": "/linux/",
 	"title": "Linux",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 Linux  WSL    WSL GUI 애플리케이션에서 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
+	"content": "Linux  WSL    WSL GUI 애플리케이션에서 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
+},
+{
+	"uri": "/java/",
+	"title": "JAVA",
+	"tags": [],
+	"description": "",
+	"content": "JAVA  gradle 버전을 지정하여 프로젝트 빌드하기     "
 },
 {
 	"uri": "/linux/wsl/",
@@ -39,7 +39,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Pythone     JAVA    gradle 버전을 지정하여 프로젝트 빌드하기      Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     "
+	"content": "민종로그   백민종     Pythone     Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     JAVA    gradle 버전을 지정하여 프로젝트 빌드하기      "
 },
 {
 	"uri": "/java/use-gradle-other-version/",
