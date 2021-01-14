@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JAVA on 민종로그</title>
+    <link>/java/</link>
+    <description>Recent content in JAVA on 민종로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us,ko-kr</language>
+    <lastBuildDate>Thu, 14 Jan 2021 19:14:12 +0900</lastBuildDate>
+    
+	<atom:link href="/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gradle 버전을 지정하여 프로젝트 빌드하기</title>
+      <link>/java/use-gradle-other-version/</link>
+      <pubDate>Thu, 14 Jan 2021 19:14:12 +0900</pubDate>
+      
+      <guid>/java/use-gradle-other-version/</guid>
+      <description>회사에서 예전부터 서비스 하고 있는 프로젝트에 업데이트가 필요했다. 최근에 만들어졌거나, 서비스하는 프로젝트들은 파이썬으로 개발했기 때문에 파이썬으로 개발을 하고 있는 내 입장에서 코드를 분석하고 요구사항에 맞게 수정하는게 비교적 쉽지만, 예전 프로젝트들은 자바로 개발 되어서 난항을 겪는다..
+어쨌든 밥은 먹고 살아야하니 git에서 소스를 내려받아 빌드를 하는데 잘 되지 않았다.
+콘솔에 출력된 로그를 보니 &amp;lt;&amp;lt; 연산자 때문이었는데, 찾아보니 gradle 버전이 5.0 으로 업데이트 되면서 해당 연산자를 사용하지 않게 됐다고 한다. 따라서 doLast로 교체하거나 다른 gradle 버전을 이용해서 빌드를 해야하는데, 최대한 기존 프로젝트를 수정하고 싶지 않아서 사용하고 있는 gradle 버전을 변경하기로 했다.</description>
+    </item>
+    
+  </channel>
+</rss>

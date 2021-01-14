@@ -14,6 +14,13 @@
 	"content": "Chapter 1 Python "
 },
 {
+	"uri": "/java/",
+	"title": "JAVA",
+	"tags": [],
+	"description": "",
+	"content": "WSL Windows Subsystem for Linux  gradle 버전을 지정하여 프로젝트 빌드하기     "
+},
+{
 	"uri": "/linux/",
 	"title": "Linux",
 	"tags": [],
@@ -32,7 +39,14 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Pythone     Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     "
+	"content": "민종로그   백민종     Pythone     JAVA    gradle 버전을 지정하여 프로젝트 빌드하기      Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     "
+},
+{
+	"uri": "/java/use-gradle-other-version/",
+	"title": "gradle 버전을 지정하여 프로젝트 빌드하기",
+	"tags": [],
+	"description": "",
+	"content": "회사에서 예전부터 서비스 하고 있는 프로젝트에 업데이트가 필요했다. 최근에 만들어졌거나, 서비스하는 프로젝트들은 파이썬으로 개발했기 때문에 파이썬으로 개발을 하고 있는 내 입장에서 코드를 분석하고 요구사항에 맞게 수정하는게 비교적 쉽지만, 예전 프로젝트들은 자바로 개발 되어서 난항을 겪는다..\n어쨌든 밥은 먹고 살아야하니 git에서 소스를 내려받아 빌드를 하는데 잘 되지 않았다.\n콘솔에 출력된 로그를 보니 \u0026lt;\u0026lt; 연산자 때문이었는데, 찾아보니 gradle 버전이 5.0 으로 업데이트 되면서 해당 연산자를 사용하지 않게 됐다고 한다. 따라서 doLast로 교체하거나 다른 gradle 버전을 이용해서 빌드를 해야하는데, 최대한 기존 프로젝트를 수정하고 싶지 않아서 사용하고 있는 gradle 버전을 변경하기로 했다.\n 패키지 관리자를 통한 업데이트 만약 gradle 빌드를 리눅스 콘솔에서 진행하고 비교적 최신의 버전을 이용하고 싶다면 패키지 관리자를 통해 설치할 수 있다.\n아래 명령어로 gradle 을 설치한다.\nsudo apt install gradle 설치된 gradle의 버전을 확인해보면 2.x 버전인 것을 확인할 수 있다.\ngradle -v 최신 버전을 받기 위해 먼저 repository를 추가 후, 패키지 인덱스 정보를 업데이트한다.\nsudo add-apt-repository ppa:cwchien/gradle sudo apt update 이제 sudo apt install gradle- 까지 입력후 Tab 키를 누르면 설치할 수 있는 종류가 출력된다. 출력된 목록 중 원하는 버전을 선택하여 인스톨을 진행하면 된다.\n STS (Eclipse)를 통한 버전관리 이게 제일 간단한 방법인 것 같다. IDE를 sts나 이클립스를 사용한다면, 다음과 같이 쉽게 설정할 수 있다.\nWindow \u0026gt; Preferences \u0026gt; Gradle 로 접근 후 Gradle distribution \u0026gt; Specific Gradle Version 항목에서 사용할 gradle의 버전을 직접 관리할 수 있다.\n"
 },
 {
 	"uri": "/linux/wsl/use-korean/",
