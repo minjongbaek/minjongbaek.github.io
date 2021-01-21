@@ -18,7 +18,7 @@
 	"title": "Linux",
 	"tags": [],
 	"description": "",
-	"content": "Linux  WSL    WSL GUI 애플리케이션에서 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
+	"content": "Linux  WSL    WSL 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
 },
 {
 	"uri": "/java/",
@@ -32,14 +32,14 @@
 	"title": "WSL",
 	"tags": [],
 	"description": "",
-	"content": "WSL Windows Subsystem for Linux  WSL GUI 애플리케이션에서 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기     "
+	"content": "WSL Windows Subsystem for Linux  WSL 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기     "
 },
 {
 	"uri": "/",
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Python     Linux    WSL    WSL GUI 애플리케이션에서 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     Java    gradle 버전을 지정하여 프로젝트 빌드하기      "
+	"content": "민종로그   백민종     Python     Linux    WSL    WSL 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     Java    gradle 버전을 지정하여 프로젝트 빌드하기      "
 },
 {
 	"uri": "/java/use-gradle-other-version/",
@@ -50,10 +50,10 @@
 },
 {
 	"uri": "/linux/wsl/use-korean/",
-	"title": "WSL GUI 애플리케이션에서 한글 입력하기",
+	"title": "WSL 한글 입력하기",
 	"tags": [],
 	"description": "",
-	"content": "WSL을 설치 후 X DISPLAY 서버 설정까지 모두 마쳤다. 그런데 문제가 있었다. 한글 입력이 제대로 안된다는 것이다..!\n한글을 제대로 입력하기 위해서 입력기를 설치해야한다. 리눅스에는 fcitx, uim 등의 입력기가 있지만, 전에 사용하던 우분투 데스크탑에서 fcitx를 사용했기 때문에 fcitx 기준으로 포스팅한다.\n원하는 한글 폰트를 먼저 설치한 후에, 패키지 관리자를 이용하여 fcitx를 설치한다.\nsudo apt install fcitx fcitx-hangle dbus-x11 설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 fcitx를 기본 입력기로 설정한다.\n기본 입력기로 설정 후, /etc/profile.d/fcitx.sh 파일을 생성하고 아래 내용을 입력한다.\n#!/bin/bashexport QT_IM_MODULE=fcitxexport GTK_IM_MODULE=fcitxexport XMODIFIERS=@im=fcitxexport DefaultIMModule=fcitx #optionalfcitx-autostart \u0026amp;\u0026gt;/dev/null내용 저장 후에 fcitx-config-gtk3를 실행하여 아래 사진처럼 한글 입력기가 정상적으로 추가되었는지 확인한다. 없다면 + 버튼을 눌러 추가하자.\n!! 만약 어떤 입력기도 정상적으로 보이지 않는다면 x server에서 입력기를 제대로 인식하지 못하는 문제로 fcitx \u0026amp; 라고 입력 후 다시 시도해본다.\n한글 입력기가 정상적으로 보인다면 Global Config 메뉴에서 아래 사진처럼 원하는 키와 매핑해서 사용하면 된다. "
+	"content": "WSL을 설치 후 X DISPLAY 서버 설정까지 모두 마쳤다. 그런데 문제가 있었다. 한글 입력이 제대로 안된다는 것이다..!\n한글을 제대로 입력하기 위해서 입력기를 설치해야한다. 리눅스에는 fcitx, uim 등의 입력기가 있지만, 전에 사용하던 우분투 데스크탑에서 fcitx를 사용했기 때문에 fcitx 기준으로 포스팅한다.\n원하는 한글 폰트를 먼저 설치한 후에, 패키지 관리자를 이용하여 fcitx를 설치한다.\nsudo apt install fcitx fcitx-hangul dbus-x11 설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 fcitx를 기본 입력기로 설정한다.\n기본 입력기로 설정 후, ~/.bashrc 파일에 아래 내용을 입력한다.\nexport QT_IM_MODULE=fcitxexport GTK_IM_MODULE=fcitxexport XMODIFIERS=@im=fcitxexport DefaultIMModule=fcitx내용 저장 후에 fcitx-config-gtk3를 실행하여 아래 사진처럼 한글 입력기가 정상적으로 추가되었는지 확인한다. 없다면 + 버튼을 눌러 추가하자.\n!! 만약 어떤 입력기도 정상적으로 보이지 않는다면 x server에서 입력기를 제대로 인식하지 못하는 문제로 fcitx \u0026amp; 라고 입력 후 다시 시도해본다.\n한글 입력기가 정상적으로 보인다면 Global Config 메뉴에서 아래 사진처럼 원하는 키와 매핑해서 사용하면 된다. "
 },
 {
 	"uri": "/linux/wsl/ssh_port_forwarding/",

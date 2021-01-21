@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>WSL GUI 애플리케이션에서 한글 입력하기</title>
+      <title>WSL 한글 입력하기</title>
       <link>/linux/wsl/use-korean/</link>
       <pubDate>Thu, 07 Jan 2021 16:18:55 +0900</pubDate>
       
@@ -20,8 +20,8 @@
       <description>WSL을 설치 후 X DISPLAY 서버 설정까지 모두 마쳤다. 그런데 문제가 있었다. 한글 입력이 제대로 안된다는 것이다..!
 한글을 제대로 입력하기 위해서 입력기를 설치해야한다. 리눅스에는 fcitx, uim 등의 입력기가 있지만, 전에 사용하던 우분투 데스크탑에서 fcitx를 사용했기 때문에 fcitx 기준으로 포스팅한다.
 원하는 한글 폰트를 먼저 설치한 후에, 패키지 관리자를 이용하여 fcitx를 설치한다.
-sudo apt install fcitx fcitx-hangle dbus-x11 설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 fcitx를 기본 입력기로 설정한다.
-기본 입력기로 설정 후, /etc/profile.</description>
+sudo apt install fcitx fcitx-hangul dbus-x11 설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 fcitx를 기본 입력기로 설정한다.
+기본 입력기로 설정 후, ~/.</description>
     </item>
     
     <item>
