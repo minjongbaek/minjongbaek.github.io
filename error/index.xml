@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Error on 민종로그</title>
+    <link>/error/</link>
+    <description>Recent content in Error on 민종로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us,ko-kr</language>
+    <lastBuildDate>Tue, 02 Feb 2021 10:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="/error/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Tomcat] Invalid Byte Tag in Constant Pool:0</title>
+      <link>/error/tomcat-invalid-byte-tag-in-constant-pool/</link>
+      <pubDate>Tue, 02 Feb 2021 10:06:50 +0900</pubDate>
+      
+      <guid>/error/tomcat-invalid-byte-tag-in-constant-pool/</guid>
+      <description>예전 스프링으로 개발한 프로젝트를 업데이트 할 일이 생겼다. 클래스 파일 하나만 교체하면 될 일이어서 금방 끝나나 싶었는데..
+ org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool:
+ 프로젝트를 재시작하니 위와 같은 로그가 날 반겼다. 롤백 후 심신을 추스리고 해결책을 찾았다.
+web.xml 파일에 metadata-complete=&amp;quot;true&amp;quot;를 추가해서 해결!
+&amp;lt;web-app xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns=&amp;#34;http://java.sun.com/xml/ns/javaee&amp;#34; xmlns:web=&amp;#34;http://java.sun.com/xml/ns/javaee&amp;#34; xmlns:jsp=&amp;#34;http://java.sun.com/xml/ns/javaee/jsp&amp;#34; xsi:schemaLocation=&amp;#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&amp;#34; id=&amp;#34;xxxxx&amp;#34; version=&amp;#34;2.5&amp;#34; metadata-complete=&amp;#34;true&amp;#34;&amp;gt; 단, 위 방법을 사용했을 경우 주의사항이 있다.
+metadata-complete=&amp;quot;true&amp;quot;를 포함하게 되면 서블릿 엔진이 구동될 때, 서블릿 관련 어노테이션들을 스캔하지 않게 된다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -25,6 +25,12 @@
   </url>
   
   <url>
+    <loc>/error/</loc>
+    <lastmod>2021-02-02T10:00:00+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
     <loc>/linux/wsl/</loc>
     <lastmod>2020-12-14T01:27:45+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -32,8 +38,14 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-01-14T19:14:12+09:00</lastmod>
+    <lastmod>2021-02-02T10:06:50+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/error/tomcat-invalid-byte-tag-in-constant-pool/</loc>
+    <lastmod>2021-02-02T10:06:50+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>

@@ -28,6 +28,13 @@
 	"content": "JAVA  gradle 버전을 지정하여 프로젝트 빌드하기     "
 },
 {
+	"uri": "/error/",
+	"title": "Error",
+	"tags": [],
+	"description": "",
+	"content": "ERROR  [Tomcat] Invalid Byte Tag in Constant Pool:0     "
+},
+{
 	"uri": "/linux/wsl/",
 	"title": "WSL",
 	"tags": [],
@@ -39,7 +46,14 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Python     Linux    WSL    WSL 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     Java    gradle 버전을 지정하여 프로젝트 빌드하기      "
+	"content": "민종로그   백민종     Python     Linux    WSL    WSL 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     Java    gradle 버전을 지정하여 프로젝트 빌드하기      Error    [Tomcat] Invalid Byte Tag in Constant Pool:0      "
+},
+{
+	"uri": "/error/tomcat-invalid-byte-tag-in-constant-pool/",
+	"title": "[Tomcat] Invalid Byte Tag in Constant Pool:0",
+	"tags": [],
+	"description": "",
+	"content": "예전 스프링으로 개발한 프로젝트를 업데이트 할 일이 생겼다. 클래스 파일 하나만 교체하면 될 일이어서 금방 끝나나 싶었는데..\n org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool:\n 프로젝트를 재시작하니 위와 같은 로그가 날 반겼다. 롤백 후 심신을 추스리고 해결책을 찾았다.\nweb.xml 파일에 metadata-complete=\u0026quot;true\u0026quot;를 추가해서 해결!\n\u0026lt;web-app xmlns:xsi=\u0026#34;http://www.w3.org/2001/XMLSchema-instance\u0026#34; xmlns=\u0026#34;http://java.sun.com/xml/ns/javaee\u0026#34; xmlns:web=\u0026#34;http://java.sun.com/xml/ns/javaee\u0026#34; xmlns:jsp=\u0026#34;http://java.sun.com/xml/ns/javaee/jsp\u0026#34; xsi:schemaLocation=\u0026#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd\u0026#34; id=\u0026#34;xxxxx\u0026#34; version=\u0026#34;2.5\u0026#34; metadata-complete=\u0026#34;true\u0026#34;\u0026gt; 단, 위 방법을 사용했을 경우 주의사항이 있다.\nmetadata-complete=\u0026quot;true\u0026quot;를 포함하게 되면 서블릿 엔진이 구동될 때, 서블릿 관련 어노테이션들을 스캔하지 않게 된다. 따라서 @WebServlet, @WebListener, @WebFilter, @MultipartConfig 과 같은 어노테이션을 사용하고 있다면 해당 어노테이션을 제대로 스캔하지 못하는 일이 발생할 수 있다.\n"
 },
 {
 	"uri": "/java/use-gradle-other-version/",

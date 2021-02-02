@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: 민종로그</title>
+    <title>[Tomcat] Invalid Byte Tag in Constant Pool:0 :: 민종로그</title>
 
     
     <link href="/css/nucleus.css?1612233154" rel="stylesheet">
@@ -49,7 +49,7 @@
 </script>
 
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/error/tomcat-invalid-byte-tag-in-constant-pool/">
     <nav id="sidebar" class="">
 
 
@@ -333,7 +333,7 @@
   
     
     <li data-nav-id="/error/" title="Error" class="dd-item
-        
+        parent
         
         
         ">
@@ -359,7 +359,7 @@
  
   
     
-      <li data-nav-id="/error/tomcat-invalid-byte-tag-in-constant-pool/" title="[Tomcat] Invalid Byte Tag in Constant Pool:0" class="dd-item ">
+      <li data-nav-id="/error/tomcat-invalid-byte-tag-in-constant-pool/" title="[Tomcat] Invalid Byte Tag in Constant Pool:0" class="dd-item active">
         <a href="/error/tomcat-invalid-byte-tag-in-constant-pool/">
         [Tomcat] Invalid Byte Tag in Constant Pool:0
         
@@ -400,361 +400,85 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/error/'>Error</a> > [Tomcat] Invalid Byte Tag in Constant Pool:0
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              [Tomcat] Invalid Byte Tag in Constant Pool:0
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h2 id="민종로그">민종로그</h2>
-<hr>
+<p>예전 스프링으로 개발한 프로젝트를 업데이트 할 일이 생겼다.
+클래스 파일 하나만 교체하면 될 일이어서 금방 끝나나 싶었는데..</p>
+<blockquote>
+<p><strong>org.apache.tomcat.util.bcel.classfile.ClassFormatException: Invalid byte tag in constant pool:</strong></p>
+</blockquote>
+<p>프로젝트를 재시작하니 위와 같은 로그가 날 반겼다. 롤백 후 심신을 추스리고 해결책을 찾았다.</p>
+<p><code>web.xml</code> 파일에 <code>metadata-complete=&quot;true&quot;</code>를 추가해서 해결!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;web-app</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style="color:#a6e22e">xmlns:web=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style="color:#a6e22e">xmlns:jsp=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee/jsp&#34;</span> <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;xxxxx&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;2.5&#34;</span> <span style="color:#a6e22e">metadata-complete=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p><strong>단, 위 방법을 사용했을 경우 주의사항이 있다.</strong></p>
+<p><code>metadata-complete=&quot;true&quot;</code>를 포함하게 되면 서블릿 엔진이 구동될 때, 서블릿 관련 어노테이션들을 스캔하지 않게 된다. 따라서 <code>@WebServlet</code>, <code>@WebListener</code>, <code>@WebFilter</code>, <code>@MultipartConfig</code> 과 같은 어노테이션을 사용하고 있다면 해당 어노테이션을 제대로 스캔하지 못하는 일이 발생할 수 있다.</p>
 
 
-
-
-
-
-
-<ul class="children children-li">
+<footer class="footline">
 	
+</footer>
 
-	
-		
-		
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/minjong/" >백민종</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/python/" >Python</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/linux/" >Linux</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-		
-			
-				
-<li>
-<a href="/linux/wsl/" >WSL</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-		
-			
-				
-<li>
-<a href="/linux/wsl/use-korean/" >WSL 한글 입력하기</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/linux/wsl/ssh_port_forwarding/" >외부에서 WSL에 접근할 수 있도록 설정하기</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/linux/wsl/use-xserver/" >WSL에서 GUI 프로그램 실행 환경 구성하기</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/java/" >Java</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-		
-			
-				
-<li>
-<a href="/java/use-gradle-other-version/" >gradle 버전을 지정하여 프로젝트 빌드하기</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/error/" >Error</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-		
-			
-				
-<li>
-<a href="/error/tomcat-invalid-byte-tag-in-constant-pool/" >[Tomcat] Invalid Byte Tag in Constant Pool:0</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-
-	
-</ul>
-
-
-	
-  
         
         </div>
         
@@ -935,6 +659,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -947,6 +672,7 @@
             
             
                 
+                    
                     
                 
                 
