@@ -18,14 +18,14 @@
 	"title": "Linux",
 	"tags": [],
 	"description": "",
-	"content": "Linux  WSL    WSL 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기      "
+	"content": "Linux  WSL    [WSL] WSL 한글 입력하기     [WSL] 외부에서 WSL에 접근할 수 있도록 설정하기     [WSL] WSL에서 GUI 프로그램 실행 환경 구성하기      [Linux] /dev/null 2\u0026gt;\u0026amp;1     "
 },
 {
 	"uri": "/java/",
 	"title": "Java",
 	"tags": [],
 	"description": "",
-	"content": "JAVA  gradle 버전을 지정하여 프로젝트 빌드하기     "
+	"content": "JAVA  [Spring] gradle 버전을 지정하여 프로젝트 빌드하기     "
 },
 {
 	"uri": "/error/",
@@ -39,14 +39,21 @@
 	"title": "WSL",
 	"tags": [],
 	"description": "",
-	"content": "WSL Windows Subsystem for Linux  WSL 한글 입력하기     외부에서 WSL에 접근할 수 있도록 설정하기     WSL에서 GUI 프로그램 실행 환경 구성하기     "
+	"content": "WSL Windows Subsystem for Linux  [WSL] WSL 한글 입력하기     [WSL] 외부에서 WSL에 접근할 수 있도록 설정하기     [WSL] WSL에서 GUI 프로그램 실행 환경 구성하기     "
 },
 {
 	"uri": "/",
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "민종로그   백민종     Python     Linux    WSL    WSL 한글 입력하기   외부에서 WSL에 접근할 수 있도록 설정하기   WSL에서 GUI 프로그램 실행 환경 구성하기     Java    gradle 버전을 지정하여 프로젝트 빌드하기      Error    [Tomcat] Invalid Byte Tag in Constant Pool:0      "
+	"content": "민종로그   백민종     Python     Linux    WSL    [WSL] WSL 한글 입력하기   [WSL] 외부에서 WSL에 접근할 수 있도록 설정하기   [WSL] WSL에서 GUI 프로그램 실행 환경 구성하기    [Linux] /dev/null 2\u0026gt;\u0026amp;1      Java    [Spring] gradle 버전을 지정하여 프로젝트 빌드하기      Error    [Tomcat] Invalid Byte Tag in Constant Pool:0      "
+},
+{
+	"uri": "/linux/redirection/",
+	"title": "[Linux] /dev/null 2&gt;&amp;1",
+	"tags": [],
+	"description": "",
+	"content": "WSL에 설치한 일부 프로그램을 실행하면 터미널에 출력이 생기는게 신경쓰여 이를 해결할 방법을 찾고 있었다. 실행 명령어 뒤에 \u0026gt; /dev/null 2\u0026gt;\u0026amp;1 를 추가하여 쉽게 해결했지만, 해당 명령어가 어떤 역할을 하는지 궁금하여 내 나름대로 학습한 내용을 쓰게되었다.\n저 명령어를 이해하기 위해서는 표준 입출력과 리다이렉션의 개념이 필요하다.\n일반적으로 유닉스에서 동작하는 프로그램은 실행 시 입력, 출력, 오류 출력을 위한 세 개의 스트림이 자동으로 열린다. 이를 표준 스트림이라고 부른다. 그리고 이들에게는 각각 0, 1, 2의 파일 디스크립터가 부여된다. 1\n그리고 표준 스트림을 사용자 지정 위치로 우회할 수 있는 명령을 리다이렉션이라 부른다. 보통 리다이렉션은 특정한 문자를 명령어 사이에 두어 사용한다. 아래는 표준 입/출력 리다이렉션에 대한 정리를 간단하게 정리한 표이다.\n   문자 입/출력 설명     \u0026gt; 출력 명령어의 실행 출력을 파일로 내보낸다.   \u0026raquo; 출력 명령어의 실행 출력을 파일의 끝에 추가한다.   \u0026lt; 입력 파일을 입력 대상으로 하여 명령어를 실행한다.    조금 더 구체적으로 예를 들어보자.\nls \u0026gt; ./result.txt 위 명령어를 그대로 입력하면 현재 위치한 디렉토리에 result.txt 라고 하는 파일이 새성되고, 파일에 현재 디렉토리 내의 디렉토리와 파일이 리스트 형태로 저장되어 있을 것이다.\n/dev/null은 아무것도 아닌 장치파일이라고 생각하면된다. 즉 표준 출력을 버린다고 생각하면된다. 그렇다면 2\u0026gt;\u0026amp;1은 무엇일까? 2와 1은 각각 표준 에러, 표준 출력에 해당하는 디스크립터이다. 즉, 표준 에러를 표준 출력으로 리다이렉션 하라는 의미이다.\n정리하면 명령어에 대한 표준 출력을 /dev/null로 버리고, 표준 에러는 표준 출력으로 리다이렉션 되기 때문에 화면에 아무런 결과가 보여지지 않게 되는 것이다.\n  위키피디아 - 표준스트림 \u0026#x21a9;\u0026#xfe0e;\n   "
 },
 {
 	"uri": "/error/tomcat-invalid-byte-tag-in-constant-pool/",
@@ -57,28 +64,28 @@
 },
 {
 	"uri": "/java/use-gradle-other-version/",
-	"title": "gradle 버전을 지정하여 프로젝트 빌드하기",
+	"title": "[Spring] gradle 버전을 지정하여 프로젝트 빌드하기",
 	"tags": [],
 	"description": "",
 	"content": "회사에서 예전부터 서비스 하고 있는 프로젝트에 업데이트가 필요했다. 최근에 만들어졌거나, 서비스하는 프로젝트들은 파이썬으로 개발했기 때문에 파이썬으로 개발을 하고 있는 내 입장에서 코드를 분석하고 요구사항에 맞게 수정하는게 비교적 쉽지만, 예전 프로젝트들은 자바로 개발 되어서 난항을 겪는다..\n어쨌든 밥은 먹고 살아야하니 git에서 소스를 내려받아 빌드를 하는데 잘 되지 않았다.\n콘솔에 출력된 로그를 보니 \u0026lt;\u0026lt; 연산자 때문이었는데, 찾아보니 gradle 버전이 5.0 으로 업데이트 되면서 해당 연산자를 사용하지 않게 됐다고 한다. 따라서 doLast로 교체하거나 다른 gradle 버전을 이용해서 빌드를 해야하는데, 최대한 기존 프로젝트를 수정하고 싶지 않아서 사용하고 있는 gradle 버전을 변경하기로 했다.\n 패키지 관리자를 통한 업데이트 만약 gradle 빌드를 리눅스 콘솔에서 진행하고 비교적 최신의 버전을 이용하고 싶다면 패키지 관리자를 통해 설치할 수 있다.\n아래 명령어로 gradle 을 설치한다.\nsudo apt install gradle 설치된 gradle의 버전을 확인해보면 2.x 버전인 것을 확인할 수 있다.\ngradle -v 최신 버전을 받기 위해 먼저 repository를 추가 후, 패키지 인덱스 정보를 업데이트한다.\nsudo add-apt-repository ppa:cwchien/gradle sudo apt update 이제 sudo apt install gradle- 까지 입력후 Tab 키를 누르면 설치할 수 있는 종류가 출력된다. 출력된 목록 중 원하는 버전을 선택하여 인스톨을 진행하면 된다.\n STS (Eclipse)를 통한 버전관리 이게 제일 간단한 방법인 것 같다. IDE를 sts나 이클립스를 사용한다면, 다음과 같이 쉽게 설정할 수 있다.\nWindow \u0026gt; Preferences \u0026gt; Gradle 로 접근 후 Gradle distribution \u0026gt; Specific Gradle Version 항목에서 사용할 gradle의 버전을 직접 관리할 수 있다.\n"
 },
 {
 	"uri": "/linux/wsl/use-korean/",
-	"title": "WSL 한글 입력하기",
+	"title": "[WSL] WSL 한글 입력하기",
 	"tags": [],
 	"description": "",
 	"content": "WSL을 설치 후 X DISPLAY 서버 설정까지 모두 마쳤다. 그런데 문제가 있었다. 한글 입력이 제대로 안된다는 것이다..!\n한글을 제대로 입력하기 위해서 입력기를 설치해야한다. 리눅스에는 fcitx, uim 등의 입력기가 있지만, 전에 사용하던 우분투 데스크탑에서 fcitx를 사용했기 때문에 fcitx 기준으로 포스팅한다.\n원하는 한글 폰트를 먼저 설치한 후에, 패키지 관리자를 이용하여 fcitx를 설치한다.\nsudo apt install fcitx fcitx-hangul dbus-x11 설치가 끝나면 콘솔창에 im-config 명령어를 입력하여 fcitx를 기본 입력기로 설정한다.\n기본 입력기로 설정 후, ~/.bashrc 파일에 아래 내용을 입력한다.\nexport QT_IM_MODULE=fcitxexport GTK_IM_MODULE=fcitxexport XMODIFIERS=@im=fcitxexport DefaultIMModule=fcitx내용 저장 후에 fcitx-config-gtk3를 실행하여 아래 사진처럼 한글 입력기가 정상적으로 추가되었는지 확인한다. 없다면 + 버튼을 눌러 추가하자.\n!! 만약 어떤 입력기도 정상적으로 보이지 않는다면 x server에서 입력기를 제대로 인식하지 못하는 문제로 fcitx \u0026amp; 라고 입력 후 다시 시도해본다.\n한글 입력기가 정상적으로 보인다면 Global Config 메뉴에서 아래 사진처럼 원하는 키와 매핑해서 사용하면 된다. "
 },
 {
 	"uri": "/linux/wsl/ssh_port_forwarding/",
-	"title": "외부에서 WSL에 접근할 수 있도록 설정하기",
+	"title": "[WSL] 외부에서 WSL에 접근할 수 있도록 설정하기",
 	"tags": [],
 	"description": "",
 	"content": "WSL을 설치하고 외부에서 접속하기 위해 포워딩 설정을 하고 테스트까지 마쳤다. 그리고 퇴근 후 다시 접속을 시도했는데 잘 되지 않았다. 다음 날 확인해보니 WSL2의 ip주소가 변경되어 있었다.\nWSL2은 Hyper-V처럼 가상 이더넷을 생성하여 별도의 네트워크로 구성된다.\n위와 같은 특징 때문에 부팅할 때 마다 WSL의 ip주소가 계속 바뀐다는 것을 알게 된 후, 이를 해결할 방법을 찾다가 적절한 해결책을 찾아 공유하게 되었다.\n아래 코드를 파워쉘 스크립트로 작성 후, 적절한 이름으로 저장한다.\nC:\\Windows\\System32\\bash.exe -c \u0026#34;sudo service ssh start\u0026#34; $remoteport = bash.exe -c \u0026#34;ifconfig eth0 | grep \u0026#39;inet \u0026#39;\u0026#34; $found = $remoteport -match \u0026#39;\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\u0026#39;; if( $found ){ $remoteport = $matches[0]; } else{ echo \u0026#34;The Script Exited, the ip address of WSL 2 cannot be found\u0026#34;; exit; } #[Ports] #All the ports you want to forward separated by coma $ports=@(80,443,10000,3000,5000); #[Static ip] #You can change the addr to your ip config to listen to a specific address $addr=\u0026#39;0.0.0.0\u0026#39;; $ports_a = $ports -join \u0026#34;,\u0026#34;; #Remove Firewall Exception Rules iex \u0026#34;Remove-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; \u0026#34;; #adding Exception Rules for inbound and outbound Rules iex \u0026#34;New-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; -Direction Outbound -LocalPort $ports_a -Action Allow -Protocol TCP\u0026#34;; iex \u0026#34;New-NetFireWallRule -DisplayName \u0026#39;WSL 2 Firewall Unlock\u0026#39; -Direction Inbound -LocalPort $ports_a -Action Allow -Protocol TCP\u0026#34;; for( $i = 0; $i -lt $ports.length; $i++ ){ $port = $ports[$i]; iex \u0026#34;netsh interface portproxy delete v4tov4 listenport=$port listenaddress=$addr\u0026#34;; iex \u0026#34;netsh interface portproxy add v4tov4 listenport=$port listenaddress=$addr connectport=$port connectaddress=$remoteport\u0026#34;; } 위 코드를 보면 WSL의 ip를 탐색 후 기존 방화벽 룰이 있다면 제거 후 ports에 입력되는 번호로 포트를 열어주게 된다. 사용하고자 하는 번호를 입력해준다.\n그리고 다른 사람들도 그런지는 모르겠으나, 필자의 경우 ssh service가 자동으로 실행되지 않아 powershell 스크립트 상단에 아래 코드를 추가하여 ssh 데몬이 자동으로 실행되도록 해주었다. (WSL 에서는 systemctl 명령어가 작동하지 않는다..!)\nC:\\Windows\\System32\\bash.exe -c \u0026#34;sudo service ssh start\u0026#34; 이제 작성한 스크립트 코드를 작업 스케줄러에 등록한다. 나의 경우는 트리거를 시스템 시작 시 로 두었지만 필요한 대로 등록한다. 그냥 등록하면 안될 수도 있으니 가장 높은 수준의 권한으로 실행 항목 체크하는 것을 잊지 않도록 하자.\n만약 스케줄러가 제대로 작동하지 않는다면, 해당 스케줄러의 기록 메뉴에서 자세한 로그를 확인할 수 있으니 확인해보자.\n"
 },
 {
 	"uri": "/linux/wsl/use-xserver/",
-	"title": "WSL에서 GUI 프로그램 실행 환경 구성하기",
+	"title": "[WSL] WSL에서 GUI 프로그램 실행 환경 구성하기",
 	"tags": [],
 	"description": "",
 	"content": "최근까지 회사 컴퓨터 OS로 Ubuntu를 잘사용하다가 윈도우로 갈아탔다. wine을 이용해 카카오톡도 설치하고 잘사용하던 OS를 변경한 이유는 여러가지가 있었지만 (일부 사이트 이용 제한, 사내 문서 공유 등..) 가장 큰 이유는 WSL 때문이었다.\nWSL(Windows Subsystem for Linux) 이란 이름 그대로 Linux용 Windows 하위 시스템으로 사용자가 기존 가상 머신의 오버헤드 또는 듀얼 부팅 설정 없이 대부분의 GNU/Linux 환경을 수정하지 않고 Windows에서 직접 실행할 수 있게 해준다. 공식문서를 통해 쉽게 설치할 수 있다.\nWSL 설치 및 WSL 2로 업데이트\n그런데 문제가 발생했다.\n나는 IDE로 pycharm을 사용 중인데, WSL은 기본적으로 CLI 환경이기 때문에 실행 중인 애플레이케이션을 화면에 띄워주기 위해 X Server가 필요했다. 혹시나 하는 마음에 윈도우용 pycharm을 설치하고 WSL 내부의 파일에 접근해보았는데 인덱싱 속도가 너무 느려서 사용하지 못할 정도였다.\n 서론은 여기까지하고 본론으로 넘어가보자.\n우선, 윈도우 내에서 구동될 X Server가 필요한데 나는 VcXsrv를 선택했다. 윈도우 패키지 관리자인 chocolatey 이용해 VcXsrv를 설치한다. (진짜 윈도우 사용하면서 apt 명령어가 새삼 편했다는 것을 깨달았다.) chocolatey은 다음 문서를 참고하여 쉽게 설치 가능하다.\nchocolatey 설치하기\npowershell에서 아래 명령어를 입력한다.\nchoco install vcxsrv -y 설치가 완료 됐다면, 프로그램을 실행시키고 다음과 같이 설정한다.\n그리고 리눅스에서 X Server의 디스플레이를 찾을 수 있도록 WSL의 사용자 홈 디렉토리에 있는 .bashrc 파일 아래에 다음과 같은 코드를 추가한다.\nexport DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0 이어서 설치한 파일을 실행하면\u0026hellip;\n리눅스 프로그램을 화면으로 볼 수 있게 됐다!\n"

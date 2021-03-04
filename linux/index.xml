@@ -6,10 +6,17 @@
     <description>Recent content in Linux on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate>
-    
-	<atom:link href="/linux/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate><atom:link href="/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Linux] /dev/null 2&gt;&amp;1</title>
+      <link>/linux/redirection/</link>
+      <pubDate>Wed, 03 Mar 2021 23:51:50 +0900</pubDate>
+      
+      <guid>/linux/redirection/</guid>
+      <description>WSL에 설치한 일부 프로그램을 실행하면 터미널에 출력이 생기는게 신경쓰여 이를 해결할 방법을 찾고 있었다. 실행 명령어 뒤에 &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 를 추가하여 쉽게 해결했지만, 해당 명령어가 어떤 역할을 하는지 궁금하여 내 나름대로 학습한 내용을 쓰게되었다.
+저 명령어를 이해하기 위해서는 표준 입출력과 리다이렉션의 개념이 필요하다.
+일반적으로 유닉스에서 동작하는 프로그램은 실행 시 입력, 출력, 오류 출력을 위한 세 개의 스트림이 자동으로 열린다. 이를 표준 스트림이라고 부른다. 그리고 이들에게는 각각 0, 1, 2의 파일 디스크립터가 부여된다.</description>
+    </item>
     
   </channel>
 </rss>

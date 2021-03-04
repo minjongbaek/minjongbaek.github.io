@@ -6,13 +6,9 @@
     <description>Recent content in Java on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Thu, 14 Jan 2021 19:14:12 +0900</lastBuildDate>
-    
-	<atom:link href="/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 14 Jan 2021 19:14:12 +0900</lastBuildDate><atom:link href="/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>gradle 버전을 지정하여 프로젝트 빌드하기</title>
+      <title>[Spring] gradle 버전을 지정하여 프로젝트 빌드하기</title>
       <link>/java/use-gradle-other-version/</link>
       <pubDate>Thu, 14 Jan 2021 19:14:12 +0900</pubDate>
       

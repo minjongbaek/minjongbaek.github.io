@@ -6,13 +6,9 @@
     <description>Recent content in WSL on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate>
-    
-	<atom:link href="/linux/wsl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Dec 2020 01:27:45 +0900</lastBuildDate><atom:link href="/linux/wsl/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>WSL 한글 입력하기</title>
+      <title>[WSL] WSL 한글 입력하기</title>
       <link>/linux/wsl/use-korean/</link>
       <pubDate>Thu, 07 Jan 2021 16:18:55 +0900</pubDate>
       
@@ -25,7 +21,7 @@ sudo apt install fcitx fcitx-hangul dbus-x11 설치가 끝나면 콘솔창에 im
     </item>
     
     <item>
-      <title>외부에서 WSL에 접근할 수 있도록 설정하기</title>
+      <title>[WSL] 외부에서 WSL에 접근할 수 있도록 설정하기</title>
       <link>/linux/wsl/ssh_port_forwarding/</link>
       <pubDate>Sun, 03 Jan 2021 22:14:59 +0900</pubDate>
       
@@ -38,7 +34,7 @@ C:\Windows\System32\bash.exe -c &amp;#34;sudo service ssh start&amp;#34; $remote
     </item>
     
     <item>
-      <title>WSL에서 GUI 프로그램 실행 환경 구성하기</title>
+      <title>[WSL] WSL에서 GUI 프로그램 실행 환경 구성하기</title>
       <link>/linux/wsl/use-xserver/</link>
       <pubDate>Wed, 16 Dec 2020 00:00:26 +0900</pubDate>
       

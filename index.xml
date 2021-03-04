@@ -6,10 +6,17 @@
     <description>Recent content on 민종로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us,ko-kr</language>
-    <lastBuildDate>Tue, 02 Feb 2021 10:06:50 +0900</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 03 Mar 2021 23:51:50 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Linux] /dev/null 2&gt;&amp;1</title>
+      <link>/linux/redirection/</link>
+      <pubDate>Wed, 03 Mar 2021 23:51:50 +0900</pubDate>
+      
+      <guid>/linux/redirection/</guid>
+      <description>WSL에 설치한 일부 프로그램을 실행하면 터미널에 출력이 생기는게 신경쓰여 이를 해결할 방법을 찾고 있었다. 실행 명령어 뒤에 &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 를 추가하여 쉽게 해결했지만, 해당 명령어가 어떤 역할을 하는지 궁금하여 내 나름대로 학습한 내용을 쓰게되었다.
+저 명령어를 이해하기 위해서는 표준 입출력과 리다이렉션의 개념이 필요하다.
+일반적으로 유닉스에서 동작하는 프로그램은 실행 시 입력, 출력, 오류 출력을 위한 세 개의 스트림이 자동으로 열린다. 이를 표준 스트림이라고 부른다. 그리고 이들에게는 각각 0, 1, 2의 파일 디스크립터가 부여된다.</description>
+    </item>
     
     <item>
       <title>[Tomcat] Invalid Byte Tag in Constant Pool:0</title>
@@ -26,7 +33,7 @@ metadata-complete=&amp;quot;true&amp;quot;를 포함하게 되면 서블릿 엔�
     </item>
     
     <item>
-      <title>gradle 버전을 지정하여 프로젝트 빌드하기</title>
+      <title>[Spring] gradle 버전을 지정하여 프로젝트 빌드하기</title>
       <link>/java/use-gradle-other-version/</link>
       <pubDate>Thu, 14 Jan 2021 19:14:12 +0900</pubDate>
       
@@ -37,7 +44,7 @@ metadata-complete=&amp;quot;true&amp;quot;를 포함하게 되면 서블릿 엔�
     </item>
     
     <item>
-      <title>WSL 한글 입력하기</title>
+      <title>[WSL] WSL 한글 입력하기</title>
       <link>/linux/wsl/use-korean/</link>
       <pubDate>Thu, 07 Jan 2021 16:18:55 +0900</pubDate>
       
@@ -50,7 +57,7 @@ sudo apt install fcitx fcitx-hangul dbus-x11 설치가 끝나면 콘솔창에 im
     </item>
     
     <item>
-      <title>외부에서 WSL에 접근할 수 있도록 설정하기</title>
+      <title>[WSL] 외부에서 WSL에 접근할 수 있도록 설정하기</title>
       <link>/linux/wsl/ssh_port_forwarding/</link>
       <pubDate>Sun, 03 Jan 2021 22:14:59 +0900</pubDate>
       
@@ -63,7 +70,7 @@ C:\Windows\System32\bash.exe -c &amp;#34;sudo service ssh start&amp;#34; $remote
     </item>
     
     <item>
-      <title>WSL에서 GUI 프로그램 실행 환경 구성하기</title>
+      <title>[WSL] WSL에서 GUI 프로그램 실행 환경 구성하기</title>
       <link>/linux/wsl/use-xserver/</link>
       <pubDate>Wed, 16 Dec 2020 00:00:26 +0900</pubDate>
       
